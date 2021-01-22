@@ -1,44 +1,37 @@
 package notes;
 
-import java.util.Arrays;
+import java.util.Vector;
+
+class Point {
+	private int x, y;
+
+	public Point(int x, int y) {
+		this.x = x;
+		this.y = y;
+	}
+
+	public String toString() {
+		return "(" + x + "," + y + ")";
+	}
+}
 
 public class Note2 {
 
-
-
-
-	// 과제1
-	static int[] joinArr(int[] arr1, int[] arr2) {
-		      int[] newArr = new int[arr1.length + arr2.length];
-		      
-		      return newArr;
-		   }
-
 	public static void main(String[] args) {
-		      int[] arr1 = {10, 20, 30};
-		      int[] arr2 = {40, 50, 60, 70};
-		      
-		      int[] arr3 = joinArr(arr1, arr2);
-		      
-		      System.out.println(Arrays.toString(arr3)); // [10, 20, 30, 40, 50, 60, 70]
-		      
-		      // 과제2
-		      int[][] arr4 = joinArr2(arr1, arr2);
-		      arr1[0] = 100; // arr1의 내용을 바꿔도  arr4는 변경되지 않아야 한다.
-		      for(int i=0; i<arr4.length; i++) {
-		         for(int j=0; j<arr4[i].length; j++) {
-		            System.out.print(arr4[i][j] + "\t");
-		         }
-		         System.out.println();
-		      }
-		   }
 
-	private static int[][] joinArr2(int[] arr1, int[] arr2) {
-		// TODO Auto-generated method stub
-		return null;
+		Vector<Point> v = new Vector<Point>();
+
+		// 3 개의 Point 객체 삽입
+		v.add(new Point(2, 3));
+		v.add(new Point(-5, 20));
+		v.add(new Point(30, -8));
+
+		v.remove(1); // 인덱스 1의 Point(-5, 20) 객체 삭제
+
+		// 벡터에 있는 Point 객체 모두 검색하여 출력
+		for (int i = 0; i < v.size(); i++) {
+			Point p = v.get(i); // 벡터의 i 번째 Point 객체 얻어내기
+			System.out.println(p); // p.toString()을 이용하여 객체 p 출력
+		}
 	}
-
-
 }
-
-
