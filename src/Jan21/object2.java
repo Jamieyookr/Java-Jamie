@@ -1,6 +1,6 @@
 package Jan21;
 
-class Student{
+class object2{
 	
 	String name;
 	String mj;

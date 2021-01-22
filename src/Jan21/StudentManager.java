@@ -12,13 +12,13 @@ public class StudentManager {
 	
 	static Student mkStudent() {
 		Student student = new Student();
-		System.out.print("����>>> ");
+		System.out.print("성명>>> ");
 		student.name = scan2.nextLine();
-		System.out.print("�а�>>> ");
+		System.out.print("학과>>> ");
 		student.mj = scan.next();
-		System.out.print("����>>> ");
+		System.out.print("성적>>> ");
 		student.score = scan.nextDouble();
-		System.out.print("���>>> ");
+		System.out.print("등수>>> ");
 		student.rank = scan.nextInt();
 		
 		return student;
@@ -31,22 +31,22 @@ public class StudentManager {
 		try {
 			no = scan.nextInt();
 		} catch (Exception e) {
-			System.out.println("������ �Է� �����մϴ�!");
-			scan.next(); // ���۸� ����ش�.
-			menu(); // ���ȣ��
+			System.out.println("정수만 입력 가능합니다!");
+			scan.next(); // 버퍼를 비워준다.
+			menu(); // 재귀호출
 		}
 		return no;
 	}
 	
 	static void input() {
 		System.out.println("::: INPUT :::");
-		// stArr �迭�� top������ ��ü�� �����ϰ� top�� �����Ѵ�.
+		// stArr 배열의 top번지에 객체를 생성하고 top을 증가한다.
 		if(top>=MAX) {
-			System.out.println("�� �̻� �Է� �Ұ����մϴ�!");
+			System.out.println("더 이상 입력 불가능합니다!");
 			return;
 		}
 		stArr[top++] = mkStudent();
-		System.out.println("�Է� ����!!");
+		System.out.println("입력 성공!!");
 	}
 	
 	static void output() {
@@ -70,8 +70,8 @@ public class StudentManager {
 	
 	static void end() {
 		System.out.println("::: END :::");
-		System.out.println("���α׷��� �����մϴ�. \n�����ϼ̽��ϴ�!");
-		System.exit(0);// ���� ����!
+		System.out.println("프로그램을 종료합니다. \n수고하셨습니다!");
+		System.exit(0);// 강제 종료!
 	}
 
 	public static void main(String[] args) {
@@ -84,7 +84,7 @@ public class StudentManager {
 			case 4 : modify(); break;
 			case 5 : delete(); break;
 			case 6 : end(); break;
-			default : System.out.println("���: �ش���� �����ϴ�!");
+			default : System.out.println("경고: 해당사항 없습니다!");
 			}
 			System.out.println("---------------------------------");
 		}
